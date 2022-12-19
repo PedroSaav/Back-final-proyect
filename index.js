@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const path = require('path');
 const app = express()
-const PORT= 3001 || 8080
+const PORT = 3001 || 8080
 // const nodemailer = require('nodemailer');
 const cors = require('cors');
 const corsOptions ={
@@ -10,6 +10,12 @@ const corsOptions ={
     credentials:true,
     optionSuccessStatus:200
 }
+
+//Realizamos la conexión 
+// const {getConnection} = require('./database/conexion');
+// getConnection().then((mensaje) =>{
+// console.log(mensaje);
+// }).catch(console.log);
 
 //Middelwares settings
 app.use(express.json());
