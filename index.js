@@ -1,8 +1,8 @@
 const express = require('express');
 require('dotenv').config();
 const path = require('path');
-const app = express()
-const PORT = 3000 || 8080
+const app = express();
+const PORT = process.env.PORT || 8080
 // const nodemailer = require('nodemailer');
 // const cors = require('cors');
 // const corsOptions ={
@@ -21,23 +21,23 @@ require ('./database/conexion');
 
 //Middelwares settings
 app.use(express.json());
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 //DataBase connection for team 
  app.get('/about', (req, res) => {
 
-    let sql = 'SELECT * FROM team';
+//     let sql = 'SELECT * FROM team';
 
-    conexion.query(sql, (err, result) => {
-        if (err) throw err;
+//     conexion.query(sql, (err, result) => {
+//         if (err) throw err;
         res.render('about', {
             titulo: 'team',
             results: result,
         });
     }); 
-}); 
+// }); 
 
 // app.get('/about', (req, res) => {
 //     res.render('about', {
