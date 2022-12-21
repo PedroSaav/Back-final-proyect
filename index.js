@@ -46,5 +46,5 @@ app.use(express.urlencoded({extended:true}));
 // });
 
 app.listen(PORT, () => {
-    // console.log(`El servidor está trabajando en el Puerto ${PORT}`);
+    console.log(`El servidor está trabajando en el Puerto ${PORT}`);
 });
