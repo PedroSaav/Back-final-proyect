@@ -33,4 +33,6 @@ conexion.connect((err) => {
     console.log(`Conectado a la Base de Datos ${process.env.db_database}`);
 })
 
+module.exports = conexion;
+
 

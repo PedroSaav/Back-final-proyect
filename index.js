@@ -2,14 +2,16 @@ const express = require('express');
 require('dotenv').config();
 const path = require('path');
 const app = express()
-const PORT = 3001 || 8080
+const PORT = 3000 || 8080
 // const nodemailer = require('nodemailer');
-const cors = require('cors');
-const corsOptions ={
-    origin:'http://localhost:4200',
-    credentials:true,
-    optionSuccessStatus:200
-}
+// const cors = require('cors');
+// const corsOptions ={
+//     origin:'http://localhost:4200',
+//     credentials:true,
+//     optionSuccessStatus:200
+// }
+
+require ('./database/conexion');
 
 //Realizamos la conexión 
 // const {getConnection} = require('./database/conexion');
@@ -20,7 +22,7 @@ const corsOptions ={
 //Middelwares settings
 app.use(express.json());
 app.use(cors(corsOptions));
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //DataBase connection for team 
@@ -46,4 +48,3 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(PORT, () => {
     console.log(`El servidor está trabajando en el Puerto ${PORT}`);
 });
-
