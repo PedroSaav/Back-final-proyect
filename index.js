@@ -33,8 +33,8 @@ app.use(express.urlencoded({extended:true}));
 //     conexion.query(sql, (err, result) => {
 //         if (err) throw err;
         res.render('about', {
-            titulo: 'team',
-            results: result,
+            titulo: 'team'
+            // results: result,
         });
     }); 
 // }); 
@@ -46,5 +46,5 @@ app.use(express.urlencoded({extended:true}));
 // });
 
 app.listen(PORT, () => {
-    console.log(`El servidor está trabajando en el Puerto ${PORT}`);
+    // console.log(`El servidor está trabajando en el Puerto ${PORT}`);
 });
